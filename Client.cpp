@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "Exam.hpp"
 #include "UserData.hpp"
 #include <iostream>
@@ -9,17 +10,23 @@
 #include <string.h>
 #include <string>
 =======
+=======
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 #include "UserData.hpp"
 #include "Exam.hpp"
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+<<<<<<< HEAD
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
+=======
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 #include <sys/ipc.h>
 #include <sys/msg.h>
 #include <sys/shm.h>
 #include <sys/types.h>
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include <vector>
 
@@ -49,6 +56,8 @@ void screen_Output2(vector<string> &vec); // added by me
 using namespace std;
 char *strToChar(string str);
 =======
+=======
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 #include <iostream>
 #include <string>
 #include <vector>
@@ -57,6 +66,9 @@ char *strToChar(string str);
 
 using namespace std;
 char* strToChar(string str);
+<<<<<<< HEAD
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
+=======
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 void signalHandler(int signum);
 void inputAnswer(void);
@@ -67,7 +79,11 @@ pid_t myPid;
 key_t myKey = 0;
 int msqid = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 char name[MAX_NAME_LEN + 1];
+=======
+char name[MAX_NAME_LEN+1];
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 =======
 char name[MAX_NAME_LEN+1];
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
@@ -84,6 +100,7 @@ int main(int argc, char const *argv[])
 {
     myPid = getpid();
 <<<<<<< HEAD
+<<<<<<< HEAD
     // initial msgqueue
     myKey = ftok("userConn", 3);
     int msqid = msgget(myKey, IPC_CREAT);
@@ -93,6 +110,8 @@ int main(int argc, char const *argv[])
     shmId = shmget(shmKey, MAX_SHM_SIZE, IPC_CREAT);
     exam = (Exam *)shmat(shmId, NULL, 0);
 =======
+=======
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
     //initial msgqueue
     myKey = ftok("userConn", 3);
     int msqid = msgget(myKey, IPC_CREAT);
@@ -101,14 +120,21 @@ int main(int argc, char const *argv[])
     shmKey = ftok("examState",4);
     shmId = shmget(shmKey,MAX_SHM_SIZE,IPC_CREAT);
     exam = (Exam*)shmat(shmId, NULL, 0);
+<<<<<<< HEAD
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
+=======
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 
     signal(SIGUSR1, signalHandler);
     while (1)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!isConnected)
         {
+=======
+        if(!isConnected){
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 =======
         if(!isConnected){
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
@@ -125,9 +151,13 @@ int main(int argc, char const *argv[])
             isConnected = 1;
             pause();
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
         else
         {
+=======
+        }else{
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 =======
         }else{
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
@@ -147,6 +177,7 @@ int main(int argc, char const *argv[])
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 char *strToChar(string str)
 {
 
@@ -160,23 +191,38 @@ char* strToChar(string str){
     writable.push_back('\0');
     char* ptr = &writable[0];
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
+=======
+char* strToChar(string str){
+    
+    std::vector<char> writable(str.begin(), str.end());
+    writable.push_back('\0');
+    char* ptr = &writable[0];
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
     return ptr;
 }
 void signalHandler(int signum)
 {
     if (signum == SIGUSR1)
 <<<<<<< HEAD
+<<<<<<< HEAD
     {
 =======
     {
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
+=======
+    {   
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
         system("clear");
         showExam(exam);
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 void inputAnswer(void)
 {
+=======
+void inputAnswer(void){
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
 =======
 void inputAnswer(void){
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
@@ -184,6 +230,7 @@ void inputAnswer(void){
     scanf("%s", name);
     fflush(stdout);
     fflush(stdin);
+<<<<<<< HEAD
 <<<<<<< HEAD
     cout << "debug1" << endl;
     memset(&examData, 0x00, sizeof(MsgExamData));
@@ -312,6 +359,8 @@ void showExam(Exam *exam)
     screen_Output2(printstr);
 }
 =======
+=======
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
     cout <<"debug1"<<endl;
     memset(&examData, 0x00, sizeof(MsgExamData));
     examData.mtype = MSG_EXAM_TYPE;
@@ -325,5 +374,9 @@ void showExam(Exam *exam){
     cout << "Num : " << exam->getNum() <<endl;
     cout << "문제 : " << exam->getDes() << endl;
     cout << "답 : " << endl;
+<<<<<<< HEAD
+}
+>>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
+=======
 }
 >>>>>>> 11501d76af92fdd8c9d2952a8f40ede1507c8292
