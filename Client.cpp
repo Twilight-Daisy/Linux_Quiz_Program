@@ -232,7 +232,7 @@ void screen_Output2(vector<string> &tstlst)
     print_Hyphen(WIDTH, COLOR_MAIN_STRING, "T");
 }
 //--------------------------------------------------
-// Changed for dsiplaying a qustion and a questions number
+// Changed for dsiplaying a qustion and a questions number.
 void showExam(Exam *exam)
 {
 
