@@ -49,6 +49,7 @@ int msqid = 0;
 char name[MAX_NAME_LEN + 1];
 MsgUserData userData;
 MsgExamData examData;
+vector<UserData> users;
 
 key_t shmKey = 0;
 int shmId = 0;
@@ -245,9 +246,19 @@ void showExam(Exam *exam)
     a = ("Number:" + out_string);
     b = ("Question:" + exam->getDes());
     c = ("Answer:");
-
     printstr.push_back(a);
     printstr.push_back(b);
     printstr.push_back(c);
+
+    //user정보들 디버깅용
+    users = exam->getUserInfo();
+    for (int i = 0; i < users.size(); i++)
+    {
+        string s = "userPid : " + to_string(users.at(i).getPid()) + ", userName : " + users.at(i).getName() +
+                   ", userScore : " + to_string(users.at(i).getScore());
+        printstr.push_back(s);
+    }
+    //user정보들 디버깅용
+    
     screen_Output2(printstr);
 }

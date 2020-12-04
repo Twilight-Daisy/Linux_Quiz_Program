@@ -1,0 +1,80 @@
+1.Enter command to show hidden files or directories
+ls-a
+
+2.Enter a command to print permissions, file size, modification date, file name, etc.
+ls-l
+
+3.Enter a command to print directories in reverse alphabetical order
+ls-r
+
+4.Enter the command to print detailed information of all files and directories in the current directory.
+ls-al
+
+5.Enter the command to show the current working directory
+pwd
+
+6.Enter the command to move the directory
+cd
+
+7.Enter the command to move to the upper directory
+cd ..
+
+8.Enter the command to create the directory
+mkdir
+
+9.Enter the command to delete empty directories
+rmdir
+
+10.Enter the command to copy files or directories
+cp
+
+11.Enter the command to copy the entire directory
+cp -r
+
+12.Enter the command to move the file
+mv
+
+13.Enter a command to delete a file or directory
+rm
+
+14.Enter a command to print the type of file
+file
+
+15.Enter content in the file or enter a command to display the content
+cat
+
+16.Enter a command to create a new empty file or change the timestamp of the file.
+touch
+
+17.Enter a command to search for commands you have run
+history
+
+18.Enter a command to print the size of a directory or file
+du
+
+19.Enter a command that compares two files and prints the first location of the different characters on the screen.
+cmp
+
+20.Enter the command to combine multiple files into one file
+tar
+
+21.Enter the command to clear the terminal screen
+clear
+
+22.Enter the command to divide the file
+split
+
+23.Enter the command to print the beginning of the file
+head
+
+24.Enter the command to print the end of the file
+tail
+
+25.Enter a command to change the access rights of the file
+chmod
+
+26.Enter the command to find the string
+grep
+
+27.Enter a command to show the currently connected user
+users

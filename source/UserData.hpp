@@ -23,6 +23,13 @@ struct __MsgExamData {
 };
 typedef struct __MsgExamData MsgExamData;
 
+struct __UserDataStruct {
+    pid_t pid;
+    char name[MAX_NAME_LEN+1];
+    int score;
+};
+typedef struct __UserDataStruct UserDataStruct;
+
 class UserData {
     public :
     UserData();
