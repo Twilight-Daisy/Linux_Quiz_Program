@@ -90,6 +90,7 @@ char *strToChar(string str) {
 }
 void signalHandler(int signum) {
     if (signum == SIGUSR1) {
+        system("echo -n \"\033[0m\"");
         system("clear");
         showExam(exam);
     }
@@ -154,6 +155,7 @@ void screen_Output_Client(vector<string> tstlst) {
         ypos++;
     }
     system("tput rc");
+    system("echo -n \"\033[47;30m\"");
 }
 //--------------------------------------------------
 // Changed for dsiplaying a qustion and a questions number
