@@ -1,14 +1,14 @@
 1.Enter command to show hidden files or directories
-ls-a
+ls -a
 
 2.Enter a command to print permissions, file size, modification date, file name, etc.
-ls-l
+ls -l
 
 3.Enter a command to print directories in reverse alphabetical order
-ls-r
+ls -r
 
 4.Enter the command to print detailed information of all files and directories in the current directory.
-ls-al
+ls -al
 
 5.Enter the command to show the current working directory
 pwd

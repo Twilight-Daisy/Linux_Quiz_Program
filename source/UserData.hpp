@@ -7,7 +7,7 @@
 #define MSG_DATA_TYPE 1
 #define MSG_EXAM_TYPE 2
 #define MSG_DATA_SIZE (sizeof(MsgUserData) - sizeof(long))
-#define MAX_NAME_LEN 32
+#define MAX_NAME_LEN 100
 
 struct __MsgUserData {
     long mtype;

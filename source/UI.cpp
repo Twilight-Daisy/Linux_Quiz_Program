@@ -1,3 +1,4 @@
+#include "UI.hpp"
 #include "Exam.hpp"
 #include <iostream>
 #include <stdlib.h> // system 명령어 사용
@@ -6,51 +7,13 @@
 
 using namespace std;
 
-const int WIDTH = 83;  // 가로 길이
-const int HEIGHT = 27; // 세로 길이
+// c++에서 echo -e(개행문자 사용)는 인식되지 않으며 자동 적용되어있는 상태이다
+// \"를 써야 따옴표가 인식된다
+// -n(끝에서 개행하지 않음)은 자동 적용되어있지 않다
 
-const string COLOR_HEADER = "46;30m";
-const string COLOR_MAIN_STRING = "47;30m";
-const string COLOR_EMPHASIS_STRING = "40;37m";
-// 색상 코드
-
-const string LIST1 = "1. echo 명령어 이용";
-const string LIST2 = "2. cat 명령어 이용";
-const string LIST_END = "3. 프로그램 종료";
-// 메인 화면 출력 문구 및 문제 헤더 출력 부분
-
-void screen_Output();
-void Header();
-void print_String(string content, string color = "0m", string T_F = "F");
-void print_Blank(int num, string color = "0m", string T_F = "F");
-void print_Hyphen(int print_length, string color = "0m", string T_F = "F");
-void newLine(string T_F);
-void blank_Frame(int num);
-
-// void indicate_Exams_Types();
-// void check_Command();
-// void indicate_Exams(Exam exam);
-
-// 문제(exam)가 추가될 시 전역변수 추가,
-// indicate_Exams_Types() 함수 출력 구문 추가,
-// check_Command() switch문 추가, 수정 할 것!
-
-// <개선 필요 사항>
-// 1. 실행 예시 출력 부분(현재 정답이 출력되고 있음)
-// 2. Exam 선언(Exam이 많아질수록 코드가 지나치게 방대해짐)
-
-// <추가 예정 사항>
-// dat 파일 생성
-// pvp 구현(서버에서 문제 셋팅, 클라언트에게 뿌림, 먼저 맞춘 사람 점수 부여)
-
-// g++ UI.cpp Exam.cpp -o UI로 빌드할 것
-
-int main() {
-    screen_Output();
-    // indicate_Exams_Types();
-    // check_Command();
-    return 0;
-}
+// ★★★
+// 아래 함수와 tput을 같이 사용할 경우 의미가 없을지라도 반드시 개행을 진행해야
+// 합니다. 그렇지 않으면 tput 명령어가 모두 무시됩니다!!!
 
 void screen_Output() {
     system("clear");
@@ -249,7 +212,3 @@ void blank_Frame(int num) {
 //         }
 //     }
 // } // 문제를 출력하는 함수
-
-// c++에서 echo -e(개행문자 사용)는 인식되지 않으며 자동 적용되어있는 상태이다
-// \"를 써야 따옴표가 인식된다
-// -n(끝에서 개행하지 않음)은 자동 적용되어있지 않다

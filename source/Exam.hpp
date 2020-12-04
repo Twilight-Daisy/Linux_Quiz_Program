@@ -4,7 +4,7 @@
 #include "UserData.hpp"
 using namespace std;
 
-#define MAX_NAME_LEN 32
+#define MAX_NAME_LEN 100
 #define MAX_USER_SIZE 6
 
 class Exam
