@@ -117,15 +117,15 @@ void screen_Output_Client(vector<string> tstlst) {
     screen_Output();
 
     if (tstlst[1].length() > WIDTH - 2) {
-        str1 = tstlst[1].substr(0, WIDTH - 2);
-        str2 = tstlst[1].substr(WIDTH - 1, tstlst[1].length());
+        str1 = tstlst[1].substr(0, WIDTH - 3) + "-";
+        str2 = tstlst[1].substr(WIDTH - 3);
         for (int i = 0; i < 3; i++) {
             string cursor_positioin = "tput cup " + to_string(ypos) + " 1";
             system(cursor_positioin.c_str());
             if (i == 1) {
                 print_String(str1, COLOR_MAIN_STRING, "T");
                 ypos++;
-                string cursor_positioin = "tput cup " + to_string(ypos) + " 1";
+                string cursor_positioin = "tput cup " + to_string(ypos) + " 12";
                 system(cursor_positioin.c_str());
                 print_String(str2, COLOR_MAIN_STRING, "T");
                 ypos++;
