@@ -23,6 +23,7 @@ char *strToChar(string str);
 void signalHandler(int signum);
 void inputAnswer(void);
 void showExam(Exam *exam);
+string scoreBar(int score);
 
 pid_t myPid;
 
@@ -179,10 +180,21 @@ void showExam(Exam *exam) {
     for (int i = 0; i < users.size(); i++) {
         string s = "userPid : " + to_string(users.at(i).getPid()) +
                    ", userName : " + users.at(i).getName() +
-                   ", userScore : " + to_string(users.at(i).getScore());
+                   ", userScore : " + scoreBar(users.at(i).getScore());
         printstr.push_back(s);
     }
     // user정보들 디버깅용
 
     screen_Output_Client(printstr);
+}
+
+string scoreBar(int score) {
+
+    string s = " ";
+    for (int i = 0; i < score; i++)
+
+        s += "■";
+    s += "\t(" + to_string(score) + ")\n";
+
+    return s;
 }
