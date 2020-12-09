@@ -42,8 +42,7 @@ void Exam::setUserInfo(vector<UserData> users)
         s->pid = users[i].getPid();
         s->score = users[i].getScore();
         memcpy(s->name, users[i].getName().c_str(), MAX_NAME_LEN);
-        cout <<"test"<< s->pid << ", " << s->score << s->name << endl;
-        memcpy((this->userInfo+(i*sizeof(UserDataStruct))), s, sizeof(UserDataStruct));
+        memcpy( &userInfo[i], s, sizeof(UserDataStruct));
         free(s);
     }
     this->userInfoSize = users.size();

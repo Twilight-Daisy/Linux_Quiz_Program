@@ -78,7 +78,7 @@ int main(int argc, char const *argv[])
             msgrcv(msqid, &examData, MSG_DATA_SIZE, MSG_EXAM_TYPE, 0);
             if (examData.pid != 0)
             {
-                if (exam->getAnswer() == string(examData.answer))
+                if (exams.at(curExamNum)->getAnswer() == string(examData.answer))
                 {
                     puts("debug1");
                     for (int i = 0; i < users.size(); i++)
@@ -94,8 +94,8 @@ int main(int argc, char const *argv[])
                 else
                 {
                     puts("debug2");
-                    cout << exam->getAnswer() << endl;
-                    cout << examData.answer << endl;
+                    cout <<"server: " << exam->getAnswer() << endl;   
+                    cout <<"client: " <<examData.answer << endl;
                     kill(examData.pid, SIGUSR1);
                 }
             }
